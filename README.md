@@ -257,7 +257,7 @@ MIT © 2026
 
 <div align="center">
 
-Built with ❤️ using Groq AI + Supabase + GitHub Apps
+Built with ❤️ ARYAN SANDILYA
 
 ⭐ Star this repo if you find it useful!
 
