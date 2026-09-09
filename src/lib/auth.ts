@@ -1,15 +1,14 @@
 import type { AuthOptions } from 'next-auth';
 import GitHubProvider from 'next-auth/providers/github';
-import { requireEnv } from './config';
 
 export const authOptions: AuthOptions = {
   providers: [
     GitHubProvider({
-      clientId: requireEnv('GITHUB_OAUTH_CLIENT_ID'),
-      clientSecret: requireEnv('GITHUB_OAUTH_CLIENT_SECRET'),
+      clientId: process.env.GITHUB_OAUTH_CLIENT_ID ?? '',
+      clientSecret: process.env.GITHUB_OAUTH_CLIENT_SECRET ?? '',
     }),
   ],
-  secret: requireEnv('NEXTAUTH_SECRET'),
+  secret: process.env.NEXTAUTH_SECRET ?? '',
   pages: { signIn: '/' },
   session: { strategy: 'jwt' },
   callbacks: {
