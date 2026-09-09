@@ -45,7 +45,7 @@ export function Logo({
     <div className={`logo-wrap ${className}`} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
       <HawkEye size={size} />
       <span style={{ fontFamily: '"Barlow Condensed", "Arial Black", system-ui, sans-serif', fontWeight: 900, fontSize: size * 0.67 + 'px', letterSpacing: '-0.02em', lineHeight: 1 }}>
-        DiffHawk
+        CodeReview.ai
       </span>
     </div>
   );

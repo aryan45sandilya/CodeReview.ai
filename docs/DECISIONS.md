@@ -1,4 +1,4 @@
-# Engineering Decisions — DiffHawk
+# Engineering Decisions — CodeReview.ai
 
 <!--
 This is not user documentation. This is for technical interviewers

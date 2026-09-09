@@ -1,4 +1,4 @@
-# DiffHawk — Architecture
+# CodeReview.ai — Architecture
 
 <!--
 Companion to PRD.md.
@@ -36,7 +36,7 @@ src/
     dashboard/             Dashboard page — job list + expandable findings panel
     page.tsx               Landing page — sign-in, how-it-works, CTA
   components/
-    Logo.tsx               HawkEye SVG + DiffHawk wordmark
+    Logo.tsx               HawkEye SVG + CodeReview.ai wordmark
   lib/
     config.ts              Env var loading/validation — single source of truth
     auth.ts                NextAuth config — GitHub provider, JWT callbacks
@@ -116,7 +116,7 @@ Dashboard: GET /api/jobs
   └─ reads completed/failed/active/waiting from BullMQ queue → JSON to browser
 ```
 
-1. Developer opens or pushes to a PR on a repo with DiffHawk installed.
+1. Developer opens or pushes to a PR on a repo with CodeReview.ai installed.
 2. GitHub sends a `pull_request` webhook to `/api/webhooks/github`.
 3. Webhook receiver verifies signature, checks rate limit, enqueues job, returns 200.
 4. Worker dequeues the job and mints a fresh installation token.
@@ -217,7 +217,7 @@ Groq client has a 60s timeout. `GroqFormatError` (malformed response) → Unreco
 ## 9. Explicit Scope Cuts
 
 - **No merge gating** — Reviews are advisory only. GitHub Check Runs integration (which can gate merges) is a v2 candidate.
-- **No per-line auto-fix** — DiffHawk posts comments only; committing suggested changes back to the branch is deferred.
+- **No per-line auto-fix** — CodeReview.ai posts comments only; committing suggested changes back to the branch is deferred.
 - **No persistent job history** — Job data lives in Redis only; a Redis restart clears the dashboard. A Postgres-backed history store is a v2 candidate.
 - **No multi-tenant email config** — v1 sends all summaries to a single configured `EMAIL_TO` address. Per-installation routing would require a user preferences store.
 - **No GitLab / Bitbucket support** — GitHub App only in v1.
