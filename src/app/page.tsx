@@ -118,7 +118,7 @@ export default function LandingPage() {
               Install on GitHub ↗
             </a>
             <a
-              href="https://github.com/tanisheesh/DiffHawk"
+              href="https://github.com/aryan45sandilya/CodeReview.ai"
               target="_blank"
               rel="noopener noreferrer"
               className="btn"
@@ -368,6 +368,14 @@ export default function LandingPage() {
         <span style={{ fontSize: '12px', color: 'var(--color-muted)' }}>
           Powered by Groq · Llama 3.3 · BullMQ · Redis
         </span>
+        <a
+          href="https://github.com/aryan45sandilya"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ fontSize: '12px', color: 'var(--color-muted)', textDecoration: 'none' }}
+        >
+          Made by Aryan
+        </a>
       </footer>
     </div>
   );
