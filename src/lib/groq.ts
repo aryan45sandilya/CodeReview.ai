@@ -2,7 +2,11 @@ import Groq from 'groq-sdk';
 import { config } from './config';
 import type { PrFile, ReviewResult } from './github';
 
-const client = new Groq({ apiKey: config.groqApiKey, timeout: 60_000 });
+let _client: Groq | null = null;
+function getClient(): Groq {
+  if (!_client) _client = new Groq({ apiKey: config.groqApiKey, timeout: 60_000 });
+  return _client;
+}
 
 const SYSTEM_PROMPT = `You are a senior software engineer performing a code review. Review only the diff shown — do not make assumptions about code not in the diff.
 
@@ -65,7 +69,7 @@ export async function reviewDiff(
     userMessage += `\n\nNote: ${skippedFiles.length} file(s) were skipped (over token budget): ${skippedFiles.join(', ')}`;
   }
 
-  const response = await client.chat.completions.create({
+  const response = await getClient().chat.completions.create({
     model: config.groqModel,
     max_tokens: 4096,
     messages: [
