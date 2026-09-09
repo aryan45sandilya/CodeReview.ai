@@ -280,7 +280,7 @@ export default function DashboardPage() {
               No reviews yet
             </p>
             <p style={{ fontSize: '14px', color: 'var(--color-muted)', margin: 0 }}>
-              Open a pull request on a repo where DiffHawk is installed.
+              Open a pull request on a repo where CodeReview.ai is installed.
             </p>
           </div>
         ) : (

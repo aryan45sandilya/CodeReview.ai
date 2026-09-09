@@ -1,7 +1,7 @@
-# DiffHawk — Product Requirements Document
+# CodeReview.ai — Product Requirements Document
 
 **Status:** Final
-**Owner:** Tanish Poddar
+**Owner:** Aryan Sandilya
 **One-liner:** Automated GitHub PR code reviewer — installs as a GitHub App, posts inline diff comments and a severity-ranked email summary within 30 seconds of a PR being opened.
 
 ---
@@ -38,7 +38,7 @@ Code review is the last line of defence before a bug ships, but it's also the pa
 
 ## 4. Users
 
-**Primary:** The author (Tanish Poddar), reviewing PRs on personal and portfolio repos (DiffHawk, DevPulse, InterviewOS). Every PR made during development of those projects is auto-reviewed live — the tool is its own proof of work.
+**Primary:** The author (Aryan Sandilya), reviewing PRs on personal and portfolio repos. Every PR made during development of those projects is auto-reviewed live — the tool is its own proof of work.
 
 **Secondary:** Any developer who installs the GitHub App on their own repos. The design avoids hardcoded single-user assumptions (installation tokens are per-installation, rate limits are per-installation, the GitHub App is a standard multi-tenant app architecture) so expansion is feasible without a rewrite.
 
@@ -124,7 +124,7 @@ Code review is the last line of defence before a bug ships, but it's also the pa
 | Webhook ack time | < 2 seconds on every delivery |
 | Review reliability | No missed reviews under simultaneous load (3+ PRs at once) |
 | Real issues caught | At least one real bug or security issue caught during own development (not a synthetic test) |
-| App availability | App installed and actively reviewing PRs on DiffHawk, DevPulse, InterviewOS |
+| App availability | App installed and actively reviewing PRs on configured repos |
 
 ---
 

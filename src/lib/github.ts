@@ -132,7 +132,7 @@ export async function postReview(
 
   const hasBlockers = counts.blocker > 0 || counts.major > 0;
 
-  let body = `## DiffHawk\n\n**${result.summary}**\n\n`;
+  let body = `## CodeReview.ai\n\n**${result.summary}**\n\n`;
   body += `| Severity | Count |\n|---|---|\n`;
   body += `| 🔴 Blocker | ${counts.blocker} |\n`;
   body += `| 🟠 Major   | ${counts.major} |\n`;

@@ -88,7 +88,7 @@ export default function LandingPage() {
               marginBottom: '40px',
             }}
           >
-            DiffHawk reviews every pull request — posting inline diff comments, ranking issues by severity, and emailing you a summary. Automated. Instant.
+            CodeReview.ai reviews every pull request — posting inline diff comments, ranking issues by severity, and emailing you a summary. Automated. Instant.
           </p>
           <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
             {isAuthed ? (
@@ -184,7 +184,7 @@ export default function LandingPage() {
             {
               step: 'B',
               title: 'Open a pull request',
-              body: 'Push your branch and open a PR. DiffHawk receives the webhook event automatically — nothing to configure.',
+              body: 'Push your branch and open a PR. CodeReview.ai receives the webhook event automatically — nothing to configure.',
             },
             {
               step: 'C',
@@ -319,7 +319,7 @@ export default function LandingPage() {
           Stop reviewing code manually.
         </h2>
         <p style={{ fontSize: '16px', color: '#3A3500', margin: 0, maxWidth: '460px', lineHeight: 1.65 }}>
-          DiffHawk never sleeps, never misses a SQL injection, and doesn&apos;t need a PR to be assigned to it.
+          CodeReview.ai never sleeps, never misses a SQL injection, and doesn&apos;t need a PR to be assigned to it.
         </p>
         <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
           <a

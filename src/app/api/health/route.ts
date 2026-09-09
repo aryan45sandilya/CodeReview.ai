@@ -3,5 +3,5 @@ import { NextResponse } from 'next/server';
 export const dynamic = 'force-dynamic';
 
 export function GET() {
-  return NextResponse.json({ status: 'ok', service: 'diffhawk-web' });
+  return NextResponse.json({ status: 'ok', service: 'codereview-ai-web' });
 }

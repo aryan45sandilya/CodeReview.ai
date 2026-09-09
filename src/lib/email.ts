@@ -57,7 +57,7 @@ export async function sendSummaryEmail(opts: {
   await transporter.sendMail({
     from: process.env.EMAIL_FROM,
     to: process.env.EMAIL_TO,
-    subject: `[DiffHawk] ${owner}/${repo} PR #${prNumber}: ${verdict}`,
+    subject: `[CodeReview.ai] ${owner}/${repo} PR #${prNumber}: ${verdict}`,
     html: buildHtml({ prNumber, prTitle, prUrl, result, counts }),
   });
 }
@@ -88,7 +88,7 @@ function buildHtml(opts: {
 <html>
 <body style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;max-width:600px;margin:0 auto;padding:24px;color:#18181b;">
   <div style="border-bottom:3px solid #6366f1;padding-bottom:12px;margin-bottom:24px;">
-    <span style="font-size:20px;font-weight:700;">🤖 DiffHawk</span>
+    <span style="font-size:20px;font-weight:700;">🤖 CodeReview.ai</span>
   </div>
 
   <p style="margin:0 0 4px;"><strong>PR #${prNumber}: ${safeTitle}</strong></p>
@@ -127,7 +127,7 @@ function buildHtml(opts: {
   <a href="${safeUrl}" style="display:inline-block;margin-top:20px;background:#6366f1;color:#fff;padding:10px 22px;border-radius:6px;text-decoration:none;font-weight:500;">View PR on GitHub →</a>
 
   <p style="color:#a1a1aa;font-size:12px;margin-top:32px;border-top:1px solid #e4e4e7;padding-top:16px;">
-    Automated review by DiffHawk · Powered by Groq + Llama
+    Automated review by CodeReview.ai · Powered by Groq + Llama
   </p>
 </body>
 </html>`;

@@ -18,7 +18,7 @@ const barlowCondensed = Barlow_Condensed({
 });
 
 export const metadata: Metadata = {
-  title: { default: 'DiffHawk', template: '%s · DiffHawk' },
+  title: { default: 'CodeReview.ai', template: '%s · CodeReview.ai' },
   description: 'Automated GitHub PR code review — inline comments, severity ranking, email summaries.',
   icons: {
     icon: { url: '/favicon.svg', type: 'image/svg+xml' },

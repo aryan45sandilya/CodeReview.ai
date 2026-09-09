@@ -1,7 +1,6 @@
-# Local Setup — DiffHawk
+# Local Setup — CodeReview.ai
 
-> **Just want to try it?** Use the live demo at [diffhawk.up.railway.app](https://diffhawk.up.railway.app) — no setup needed.
-> This guide is for running DiffHawk locally or deploying it yourself on Railway.
+> This guide is for running CodeReview.ai locally or deploying it yourself on Railway.
 
 ---
 
@@ -17,8 +16,8 @@
 ## 1. Clone and install
 
 ```bash
-git clone https://github.com/tanisheesh/DiffHawk
-cd DiffHawk
+git clone https://github.com/aryan45sandilya/CodeReview.ai
+cd CodeReview.ai
 npm install
 cp .env.example .env.local
 ```
@@ -33,7 +32,7 @@ npm run setup
 
 This opens GitHub in your browser with all required permissions pre-filled. Click **"Create GitHub App"** — one click. The script writes `GITHUB_APP_ID`, `GITHUB_APP_PRIVATE_KEY`, and `GITHUB_WEBHOOK_SECRET` directly into `.env.local`.
 
-After the script completes, the browser shows an **"Install on repos"** link. Click it and select the repos you want DiffHawk to review (e.g., DiffHawk, DevPulse, InterviewOS). You can add more repos later from GitHub App settings without redeploying.
+After the script completes, the browser shows an **"Install on repos"** link. Click it and select the repos you want CodeReview.ai to review. You can add more repos later from GitHub App settings without redeploying.
 
 ---
 
@@ -110,7 +109,7 @@ Railway runs two services from the same repo. Both share one Redis plugin and th
 
 ### Service 1 — Web (Next.js + webhook receiver)
 
-1. Railway dashboard → New Project → Deploy from GitHub → select `DiffHawk`.
+1. Railway dashboard → New Project → Deploy from GitHub → select `CodeReview.ai`.
 2. Add **Redis** plugin — Railway injects `REDIS_URL` automatically into both services.
 3. Set env vars from `.env.local` (replace `NEXTAUTH_URL` with the Railway-assigned public URL).
 4. Build command: `npm ci && npm run build`
